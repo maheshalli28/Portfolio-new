@@ -7,4 +7,14 @@
   transform: translateY(-5px);
 }
 
+.zoom-container {
+  overflow: hidden;
+}
 
+.zoom-img {
+  transition: transform 0.4s ease;
+}
+
+.zoom-container:hover .zoom-img {
+  transform: scale(1.1);
+}

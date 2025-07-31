@@ -1,23 +1,45 @@
-/* Container fade-in */
-.fade-section {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1s ease, transform 1s ease;
+/* Remove card borders */
+.card {
+  border: none !important;
+  background-color: #fff;
 }
 
-.fade-section.visible {
-  opacity: 1;
-  transform: translateY(0);
+/* Timeline Container */
+.timeline {
+  position: relative;
+  padding-left: 20px; /* gives space for line and dot */
+  list-style: none;
 }
 
-/* Optional: fade text inside cards with slight delay */
-.fade-text {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1s ease 0.3s, transform 1s ease 0.3s;
+/* Vertical line that passes exactly through the center of the dots */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 25.5px; /* center-aligned with dot */
+  width: 2px;
+  height: 100%;
+  background-color:gray;
+  z-index: 0;
 }
 
-.fade-section.visible .fade-text {
-  opacity: 1;
-  transform: translateY(0);
+/* Timeline items */
+.timeline-item {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 30px;
+}
+
+/* Dot marker perfectly aligned with the line */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 2px; /* (12px dot / 2) = 6px, plus 2px border = 8px to center at 14px */
+  width: 9px;
+  height: 9px;
+  background-color:gray;
+  border-radius: 50%;
+  border: 2px solid gray;
+  z-index: 1;
 }

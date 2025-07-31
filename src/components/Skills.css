@@ -2,8 +2,13 @@
   font-weight: 600;
 }
 
+#skills ul {
+  font-weight: 400;
+  
+}
+
 #skills .list-group-item {
-  font-size: 1rem;
+  font-size: 0.5rem;
 }
 .progress-container {
   width: 100%; /* You can change this to 60% or 80% as desired */
@@ -14,4 +19,19 @@
 .progress {
   height: 5px;
   border-radius: 10px;
+}
+
+.skill-item {
+  margin-bottom: 4rem; /* adds more space between each skill block */
+}
+
+.progress-container {
+  height: 8px;
+  background-color: #e9ecef;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar.animate-progress {
+  transition: width 1.2s ease-in-out;
 }

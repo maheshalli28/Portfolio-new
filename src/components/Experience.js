@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './Experience.css';
-import { FaGraduationCap, FaBriefcase } from 'react-icons/fa';
+import { FaUserGraduate , FaBriefcase } from 'react-icons/fa';
 
 const Experience = () => {
   const [animate, setAnimate] = useState(false);
@@ -42,23 +42,24 @@ const Experience = () => {
           <div className="card shadow-sm h-100 border-1 rounded-4">
             <div className="card-body fade-text">
               <h4 className="card-title mb-3 text-center">
-                <FaGraduationCap className="me-2 text-primary" />
-                Education
+                <FaBriefcase className="me-2 " />
+                Work Experience
               </h4>
-              <ul className="list-unstyled px-4">
-                <li className="mb-4">
-                  <h5 className="fw-bold mb-1">Bachelor of Technology - CS</h5>
-                  <p className="mb-1 text-muted">Sri Indu Institute of Engg & Tech. (2021 - 2025)</p>
-                  <p className="mb-1 fs-6 fw-light text-muted">CGPA 7.4/10</p>
-                  <p>Hyderabad, Telangana - 500070</p>
-                </li>
-                <li>
-                  <h5 className="fw-bold mb-1">Intermediate (MPC)</h5>
-                  <p className="mb-1 text-muted">Narayana Junior College (2019 - 2021)</p>
-                  <p className="mb-1 fs-6 fw-light text-muted">Percentage 96%</p>
-                  <p>Hyderabad, Telangana - 500070</p>
-                </li>
-              </ul>
+              <ul className="timeline">
+              <li className="timeline-item mb-4">
+                <div className="d-flex align-items-center gap-2 mb-2 ">
+              <h5 className="fw-bold  mb-0">Project Intern </h5>
+              <p className='ms-auto mb-0 fst-italic'>Hyderabad - Onsite</p>
+              </div>
+              <p className="mb-1 ms-1">Osmania Technology Business Incubator  (Jul 2025 - Present)</p>
+              <p className="mb-1 ms-2 fs-6 fw-light text-muted">Leading a PostGIS-based geospatial analytics project to automate Point of Interest (POI) extraction from OpenStreetMap data.
+Designed and executed advanced spatial SQL queries and Python pipelines to analyze POIs across bounding boxes and regional
+clusters.
+Automated bounding box queries and geospatial filtering via API integration, significantly improving pipeline efficiency and
+scalability</p>  
+              </li>
+            </ul>
+             
             </div>
           </div>
         </div>
@@ -68,21 +69,23 @@ const Experience = () => {
           <div className="card shadow-sm h-100 border-1 rounded-4">
             <div className="card-body fade-text">
               <h4 className="card-title mb-3 text-center">
-                <FaBriefcase className="me-2 text-success" />
-                Work Experience
+                <FaUserGraduate  className="me-2 " />
+                Education
               </h4>
-              <ul className="list-unstyled px-4">
-                <li className="mb-4">
-                  <h5 className="fw-bold mb-1">Web Development Intern (Remote)</h5>
-                  <p className="mb-1 text-muted">Cognifyz (Jan 2025 - Apr 2025)</p>
-                  <p>
-                    <strong>Python Programming:</strong> Writing efficient and scalable code<br />
-                    <strong>Web Development:</strong> Building dynamic applications with Python frameworks<br />
-                    <strong>Automation & Scripting:</strong> Creating efficient workflow solutions<br />
-                    <strong>Database Management:</strong> Handling and optimizing data storage
-                  </p>
-                </li>
-              </ul>
+              <ul className="timeline">
+              <li className="timeline-item mb-4">
+              <h5 className="fw-bold mb-1">Bachelor of Technology - ECE</h5>
+              <p className="mb-1 ms-1">Sri Indu College of Engineering and Technology (SICET). (2021 - 2025)</p>
+              <p className="mb-1 fs-6 ms-1 fw-light text-muted">CGPA: 8.1/10</p>
+              <p className='ms-1'>Hyderabad, Telangana - 500070</p>
+              </li>
+              <li className="timeline-item">
+              <h5 className="fw-bold mb-1">Central Board of Secondary Education Class XI & XII</h5>
+               <p className="mb-1 ms-1 ">Global Indian International School (GIIS) - (2018 - 2019)</p>
+               <p className="mb-1 ms-1 fs-6 fw-light text-muted">Percentage 94%</p>
+             <p className='ms-1'>Hyderabad, Telangana - 500070</p>
+               </li>
+            </ul>
             </div>
           </div>
         </div>

@@ -1,4 +1,61 @@
-#contact h5 {
-  font-weight: 600;
-  margin-top: 1rem;
+/* Animations */
+.animate-left {
+  animation: slideInLeft 1s ease forwards;
+  opacity: 0;
+}
+
+.animate-right {
+  animation: slideInRight 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+#contact {
+  background-image: url('../assets/contact.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+ 
+  position: relative;
+  
+}
+.scroll-top-btn {
+  position: fixed;
+  bottom: 60px;
+  right: 30px;
+  background-color: #343a40b1;
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 50%;
+  z-index: 999;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+}
+
+.scroll-top-btn:hover {
+  background-color: #212529;
+  color: #fff;
 }

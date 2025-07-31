@@ -3,33 +3,42 @@ import './Projects.css';
 import { FaGithub, FaLink } from 'react-icons/fa';
 import proj1 from '../assets/image.png';
 import proj2 from '../assets/image2.jpg';
-import proj3 from '../assets/image3.jpg'
+import proj3 from '../assets/image3.jpg';
+import proj4 from '../assets/image4.png';
 
 const projectData = [
   {
     id: 1,
-    title: 'Cyber Attack Detection  sing IOT',
-    description: 'Tech Stack: IoT, Python, Machine Learning, ANN, SVM.',
+    title: 'Apple Retail Sales Analysis',
+    description: 'Tech Stack: PostgreSQL, Excel',
     image: proj1,
-    codeLink: 'https://github.com/venukumar933',
-    demoLink: 'https://securesight-demo.com',
+    codeLink: 'https://github.com/SrikarsGit/Apple-Retail-Stores-Sales-Analysis-SQL.git',
+   // demoLink: 'https://github.com/SrikarsGit/Apple-Retail-Stores-Sales-Analysis-SQL.git',
   },
   
   {
     id: 2,
-    title: 'Weather Forecast',
-    description: 'Created a weather forecast application using HTML,CSS and JavaScript.',
+    title: 'Airbnb Booking Trends Dashboard',
+    description: 'Tech Stack: Tableau, Excel',
     image: proj3,
-    codeLink: 'https://github.com/venukumar933',
-    demoLink: 'https://securesight-demo.com',
+   // codeLink: 'https://public.tableau.com/app/profile/srikar.reddy4509/viz/AirbnbBookingTrendsDashboard/Homepage#1',
+    demoLink: 'https://public.tableau.com/app/profile/srikar.reddy4509/viz/AirbnbBookingTrendsDashboard/Homepage#1',
   },
   {
     id: 3,
-    title: 'Creative Portfolio',
-    description: 'Developed a portfolio using react to show case my projects and skills.',
+    title: ' Heart Disease Prediction',
+    description: 'Tech Stack: Python ',
     image: proj2,
-    codeLink: 'https://github.com/venukumar933',
-    demoLink: 'https://github.com/venukumar933',
+   // codeLink: 'https://www.kaggle.com/code/srikarscode/heart-failure-prediction-eda-optimized-models',
+    demoLink: 'https://www.kaggle.com/code/srikarscode/heart-failure-prediction-eda-optimized-models',
+  },
+  {
+    id: 4,
+    title: ' Yelp Reviews Sentiment & Behavior Analysis',
+    description: 'Tech Stack: Snowflake, SQL, Python',
+    image: proj4,
+    codeLink: 'https://github.com/SrikarsGit/Yelp-Reviews-End-to-End-Data-Analytics-Project.git',
+   // demoLink: 'https://github.com/venukumar933',
   },
 
 ];
@@ -41,18 +50,19 @@ const Projects = () => {
       <h5 className="text-center fst-italic fw-light mb-4">Explore My Recent projects</h5>
       <div className="row">
         {projectData.map(project => (
-          <div className="col-md-6 col-lg-4 mb-4" key={project.id}>
-            <div className="card h-80 shadow-sm">
+          <div className="col-md-6 col-lg-4 mb-4 " key={project.id}>
+            <div className="card h-80 shadow-sm zoom-container">
               <img
                 src={project.image}
                 alt={project.title}
-                className="card-img-top"
-                style={{ height: '200px', objectFit: 'cover' }}
+                className="card-img-center zoom-img rounded-top "
+                style={{ height:'200px', objectFit: 'cover' }}
               />
               <div className="card-body d-flex flex-column">
-                <h5 className="card-title">{project.title}</h5>
+                <h5 className="card-title fw-bold">{project.title}</h5>
                 <p className="card-text flex-grow-1 text-secondary fst-italic">{project.description}</p>
                 <div className="d-flex justify-content-between mt-3">
+                   {project.codeLink && (
                   <a
                     href={project.codeLink}
                     target="_blank"
@@ -61,6 +71,8 @@ const Projects = () => {
                    >
                     <FaGithub size={20} /> GitHub
                   </a>
+                   )}
+
                   {project.demoLink && (
                     <a
                       href={project.demoLink}
@@ -68,7 +80,7 @@ const Projects = () => {
                       rel="noopener noreferrer"
                       className="btn btn-primary btn-sm"
                     >
-                      LiveDemo<FaLink className="ms-2" />
+                      Visit<FaLink className="ms-2" />
                     </a>
                   )}
                 </div>

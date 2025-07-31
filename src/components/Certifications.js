@@ -1,28 +1,29 @@
 import React, { useRef } from 'react';
 import './Certifications.css';
 import { LiaExternalLinkSquareAltSolid } from "react-icons/lia";
+import { LiaCertificateSolid } from "react-icons/lia";
 
 const certifications = [
   {
     id: 1,
-    title: 'Python Web Development',
-    provider: 'Cognifyz',
-    date: 'Dec 2024',
-    link: 'https://www.linkedin.com/posts/venukumar-gundaboina-8509722a6_internship-completion-certificate-activity-7292172673462218752-RryC?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEnTVTwBgSLQZsKbl5chSooOw78A-E654-o'
+    title: 'Data Science Training Program',
+    provider: 'GeeksforGeeks',
+    date: '31 Jan, 2025',
+    link: 'https://www.geeksforgeeks.org/certificate/cc176dfcce616cbb7b8b9b2d984d4bfd?utm_source=socials&utm_medium=cc_link'
   },
   {
     id: 2,
-    title: 'SQL (Basic)',
+    title: 'SQL (Advanced)',
     provider: 'HackerRank',
-    date: 'Jan 2025',
-    link: 'https://www.hackerrank.com/certificates/iframe/71375f5ad994'
+    date: '16 May, 2025',
+    link: 'https://www.hackerrank.com/certificates/3d212f7339dc'
   },
   {
     id: 3,
-    title: 'Python (Basic)',
-    provider: 'HackerRank',
-    date: 'Jan 2025',
-    link: 'https://www.hackerrank.com/certificates/901afc029022'
+    title: 'Excel: Mother of Business Intelligence',
+    provider: 'Codebasics',
+    date: '14 Mar, 2025',
+    link: 'https://codebasics.io/certificate/CB-51-527222'
   },
 ];
 
@@ -42,16 +43,19 @@ const Certifications = () => {
           >
             <div className="card h-100 shadow-sm border-1 rounded-3">
               <div className="card-body d-flex flex-column">
-                <h5 className="card-title">{cert.title}</h5>
-                <h6 className="card-subtitle text-muted mb-2">{cert.provider}</h6>
-                <p className="card-text">Issued: {cert.date}</p>
+                <div className="d-flex align-items-center mb-2">
+                 <LiaCertificateSolid className="text-warning me-2 fs-5"  size={35}/> {/* ✅ Verified badge */}
+                  <h5 className="card-title fw-bold fs-5 mb-0">{cert.title}</h5>
+                </div>
+                <h6 className="card-subtitle text-muted mb-2 ms-5">{cert.provider}</h6>
+                <p className="card-text ms-5">Issued: {cert.date}</p>
                 <a
                   href={cert.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-outline-primary mt-4 px-0 border-1 rounded-3"
+                  className="btn btn-outline-primary m-3 mb-1 px-2 py-1 border-1 rounded-3"
                 >
-                  View Certificate <LiaExternalLinkSquareAltSolid size={20} />
+                  View Certificate <LiaExternalLinkSquareAltSolid size={20} className="ms-1" />
                 </a>
               </div>
             </div>

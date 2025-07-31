@@ -1,35 +1,34 @@
 import React from 'react';
-import profileImg from '../assets/photo.jpg'; // Make sure this image exists
 import './About.css';
-import { FaDownload, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa6';
+import { FaCloudDownloadAlt } from "react-icons/fa";
+import profilePic from '../assets/photo.jpg'; // 📌 Add your image here
 
-const headingText = "Full Stack Developer".split("");
+const headingText = "Data Analyst".split("");
 const directions = ['up', 'down', 'left', 'right'];
 
 const About = () => {
   return (
     <section id="about" className="container py-5 justify-content-space-around">
-      <div className="row align-items-center mt-4 p-4">
-        
-        {/* Profile Image */}
-        <div className="col-md-4 text-center mb-4 mb-md-0">
+      <div className="row align-items-center mt-5 p-4">
+
+        {/* 🔵 Profile Image */}
+        <div className="col-md-6 text-center mt-4 mb-2">
           <img
-            src={profileImg}
+            src={profilePic}
             alt="Profile"
-            className="img-fluid rounded-circle shadow-lg"
-            style={{ width: '250px', height: '250px', objectFit: 'cover' }}
+            className="img-fluid rounded-circle shadow"
+            style={{ width: '320px', height: '320px', objectFit: 'cover' }}
           />
         </div>
 
-        {/* Info Section */}
-        <div className="col-md-8">
-          
-
-          <h5 className="fw-bold">Hello, I'M</h5>
-          <h1 className="fw-bold display-5" style={{ letterSpacing: '3px' }}>
-            GUNDABOINA VENU KUMAR.
+        {/* 🔶 Info Section */}
+        <div className="col-md-6" >
+          <h4 className="fw-bold mt-3 ">Hello, I'm</h4>
+          <h1 className="fw-bolder display-2 " style={{ letterSpacing: '3px' }}>
+            SRIKAR REDDY BOMMIDI.
           </h1>
-          <h4 className="fw-bold fst-italic animated-heading text-start">
+          <h4 className="fw-bold fst-italic animated-heading text-muted text-start">
             {headingText.map((char, i) => {
               const dir = directions[i % directions.length];
               return (
@@ -44,35 +43,35 @@ const About = () => {
             })}
           </h4>
 
-          {/* Buttons */}
-          <div className="mt-4 d-flex gap-4 flex-wrap">
+          {/* 🔗 Buttons */}
+          <div className="mt-4 d-flex gap-3 flex-wrap">
             <a
-              href="https://drive.google.com/file/d/1WfXZ0_OqK5opNvPd8Trgx4rbEv2y2eMs/view?usp=sharing"
+              href="/SRIKAR_RESUME_DATA_ANALYST.pdf"
               download
-              className="btn btn-secondary border-1 rounded-4"
+              className="btn btn-outline-secondary border-1 rounded-5 fw-bold fs-6 d-flex align-items-center text-dark"
             >
-              <FaDownload className="me-2" />
+              <FaCloudDownloadAlt className="me-1 text-dark" size={25} />
               Download CV
             </a>
 
             <a
-              href="https://www.linkedin.com/in/venukumar-gundaboina-8509722a6/"
+              href="https://www.linkedin.com/in/srikarreddybommidi/"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-outline-light border-1 rounded-4"
+              className="btn btn-outline-primary border-1 rounded-5 fw-bold fs-6 d-flex align-items-center"
             >
-              <FaLinkedin className="me-2" />
-              LinkedIn
+              <FaLinkedinIn className="me-1" size={23} />
+             
             </a>
 
             <a
-              href="https://github.com/venukumar933"
+              href="https://github.com/SrikarsGit"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-outline-light border-1 rounded-4"
+              className="btn btn-outline-dark border-1 rounded-5 fw-bold fs-6 d-flex align-items-center"
             >
-              <FaGithub className="me-2" />
-              GitHub
+              <FaGithub className='me-1' size={25} />
+             
             </a>
           </div>
         </div>

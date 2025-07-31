@@ -7,19 +7,11 @@ const Skills = () => {
   const sectionRef = useRef(null);
 
   const programmingSkills = [
-    { name: 'Python', level: 80 },
-    { name: 'JavaScript', level: 70 },
-    { name: 'C', level: 80 },
-    { name: 'Java', level: 55 },
-    { name: 'SQL', level: 85 },
-  ];
-
-  const frameworks = [
-    { name: 'React.js', level: 70 },
-    { name: 'Django', level: 75 },
-    { name: 'Node.js', level: 70 },
-    { name: 'Bootstrap', level: 85 },
-    { name: 'Tailwind CSS', level: 80 },
+    { name: 'Python: (Pandas, NumPy, Matplotlib, Seaborn, Plotly Express, Scikit-learn, Selenium)', level: 80 },
+    { name: 'Databases: (MySQL, PostgreSQL, SQL Server, Snowflake, PostGIS)', level: 70 },
+    { name: 'Visualization & BI: (Tableau, Power BI, Excel)', level: 80 },
+    { name: 'ML & Analytics: (Regression, Decision Trees, Random Forest, XGBoost, CatBoost, EDA, Sentiment Analysis)', level: 55 },
+    { name: 'Tools & Technologies: (Git, Jupyter Notebook, Web Scraping, API Integration, Basic DSA)', level: 85 },
   ];
 
   useEffect(() => {
@@ -33,21 +25,17 @@ const Skills = () => {
     );
 
     const currentRef = sectionRef.current;
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
+    if (currentRef) observer.observe(currentRef);
 
     return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
+      if (currentRef) observer.unobserve(currentRef);
     };
   }, []);
 
   const renderSkills = (skills) =>
     skills.map((skill, index) => (
-      <li key={index} className="mb-3">
-        <div className="d-flex align-items-center mb-1">
+      <li key={index} className="skill-item">
+        <div className="d-flex align-items-center mb-2">
           <FaCheckCircle className="text-success me-2" />
           <strong>{skill.name}</strong>
         </div>
@@ -69,22 +57,14 @@ const Skills = () => {
   return (
     <section id="skills" className="container py-5" ref={sectionRef}>
       <h1 className="text-center mb-2 fw-bold">Skills</h1>
-      <h5 className='text-center mb-4 fw-light fst-italic'>Languages & Frameworks I Use</h5>
-      <div className="row">
-        <div className="col-md-6 mb-4">
-          <div className="card h-100 shadow-sm">
-            <div className="card-body">
-              <h4 className="card-title mb-3 text-center">Programming Languages</h4>
-              <ul className="ps-0 list-unstyled">{renderSkills(programmingSkills)}</ul>
-            </div>
-          </div>
-        </div>
+      <h5 className="text-center mb-4 fw-light fst-italic">Languages & Frameworks I Use</h5>
 
-        <div className="col-md-6 mb-4">
-          <div className="card h-100 shadow-sm">
+      <div className="d-flex justify-content-center mb-4">
+        <div className="card-body">
+          <div className="card shadow-sm">
             <div className="card-body">
-              <h4 className="card-title mb-3 text-center">Frameworks & Libraries</h4>
-              <ul className="ps-0 list-unstyled">{renderSkills(frameworks)}</ul>
+              <h4 className="card-title mb-4 text-center">Technical Skills</h4>
+              <ul className="ps-0 mt-4 list-unstyled">{renderSkills(programmingSkills)}</ul>
             </div>
           </div>
         </div>

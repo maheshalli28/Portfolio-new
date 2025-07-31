@@ -4,7 +4,7 @@
  justify-content: center;
 }
 #about h1 {
-  color: rgb(218, 202, 23);
+  color: rgb(85, 181, 216);
 }
 
 #about h5 {
@@ -18,14 +18,11 @@
   color: #444;
 }
 #about {
-  background-image: url('https://e0.pxfuel.com/wallpapers/846/344/desktop-wallpaper-portfolio.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  color: gray;
   height: 100vh;
-  color: white;
- 
+  display: flex;
+  position: relative;
+  margin-top: -75px;
 }
 .animated-heading {
   display: flex;
@@ -40,6 +37,7 @@
   opacity: 0;
   animation: floatIn 0.5s ease-out forwards;
 }
+
 
 /* Directional Transform Origins */
 .letter-up {
@@ -62,5 +60,3 @@
     opacity: 1;
   }
 }
-
-
