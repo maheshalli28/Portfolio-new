@@ -42,7 +42,7 @@ const Experience = () => {
           <div className="card shadow-sm h-100 border-1 rounded-4">
             <div className="card-body fade-text">
               <h4 className="card-title mb-3 text-center">
-                <FaBriefcase className="me-2 " />
+                <FaBriefcase className="me-2" />
                 Work Experience
               </h4>
               <ul className="timeline">

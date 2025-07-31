@@ -5,6 +5,8 @@ import proj1 from '../assets/image.png';
 import proj2 from '../assets/image2.jpg';
 import proj3 from '../assets/image3.jpg';
 import proj4 from '../assets/image4.png';
+import proj5 from '../assets/image5.png';
+import proj6 from '../assets/image6.png';
 
 const projectData = [
   {
@@ -38,8 +40,25 @@ const projectData = [
     description: 'Tech Stack: Snowflake, SQL, Python',
     image: proj4,
     codeLink: 'https://github.com/SrikarsGit/Yelp-Reviews-End-to-End-Data-Analytics-Project.git',
-   // demoLink: 'https://github.com/venukumar933',
+   
   },
+  {
+    id: 5,
+    title: 'Uber Trip Data Analysis ',
+    description: 'Tech Stack: PostgreSQL, Python, Excel',
+    image: proj5,
+    //codeLink: 'https://github.com/SrikarsGit/Yelp-Reviews-End-to-End-Data-Analytics-Project.git',
+    codeLink: 'https://github.com/SrikarsGit/Uber-Trips-Data-Analysis.git',
+  },
+  {
+    id: 5,
+    title: 'BikeDekho ',
+    description: 'Tech Stack:Excel',
+    image: proj6,
+    //codeLink: 'https://github.com/SrikarsGit/Yelp-Reviews-End-to-End-Data-Analytics-Project.git',
+    demoLink: 'https://drive.google.com/drive/folders/1dqjW37QBtbmYKMvQRXwVJcXnta86leUw',
+  },
+
 
 ];
 

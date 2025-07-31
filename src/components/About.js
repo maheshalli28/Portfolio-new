@@ -18,7 +18,7 @@ const About = () => {
             src={profilePic}
             alt="Profile"
             className="img-fluid rounded-circle shadow"
-            style={{ width: '320px', height: '320px', objectFit: 'cover' }}
+            style={{ width: '300px', height: '300px', objectFit: 'cover' }}
           />
         </div>
 
