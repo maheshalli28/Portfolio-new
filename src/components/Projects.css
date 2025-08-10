@@ -1,20 +1,57 @@
-#projects .card {
-  transition: transform 0.3s ease;
- 
-}
-
-#projects .card:hover {
-  transform: translateY(-5px);
-}
-
-.zoom-container {
+.project-card {
+  border-radius: 16px;
   overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.zoom-img {
-  transition: transform 0.4s ease;
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-.zoom-container:hover .zoom-img {
-  transform: scale(1.1);
+.badge-type {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 12px;
+  color: white;
+}
+
+.bg-purple {
+  background-color: #b04eff;
+}
+
+.card-img-top {
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.project-card img {
+  transition: transform 0.4s ease; /* Smooth zoom effect */
+}
+
+.project-card:hover img {
+  transform: scale(1.05); /* Zoom in */
+}
+
+.project-card {
+  overflow: hidden; /* Prevent image overflow when zoomed */
+}
+.fade-in-center {
+  opacity: 0;
+  transform: scale(0.95);
+  animation: fadeInCenter 1.2s ease forwards;
+}
+
+@keyframes fadeInCenter {
+  0% {
+    opacity: 0;
+    transform: scale(0.75);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

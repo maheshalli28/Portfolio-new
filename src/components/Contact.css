@@ -1,11 +1,12 @@
-/* Animations */
+
+
 .animate-left {
-  animation: slideInLeft 1s ease forwards;
+  animation: slideInLeft 2s ease forwards;
   opacity: 0;
 }
 
 .animate-right {
-  animation: slideInRight 1s ease forwards;
+  animation: slideInRight 2s ease forwards;
   opacity: 0;
 }
 
@@ -30,32 +31,41 @@
     opacity: 1;
   }
 }
+
 #contact {
-  background-image: url('../assets/contact.png');
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
- 
   position: relative;
-  
+  color: var(--contact-text);
 }
-.scroll-top-btn {
+
+/* Card Styling */
+#contact .card {
+  background-color: var(--card-bg);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+
+/* Theme Toggle Button beside Scroll Button */
+.theme-toggle-btn {
   position: fixed;
-  bottom: 60px;
-  right: 30px;
-  background-color: #343a40b1;
-  color: #fff;
-  padding: 10px 12px;
+  bottom: 30px;
+  right: 20px;
+  background-color: var(--scroll-btn-bg);
+  color: var(--contact-text);
+  padding: 6px 8px;
   border-radius: 50%;
   z-index: 999;
   text-align: center;
-  text-decoration: none;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  transition: background-color 0.3s ease;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.scroll-top-btn:hover {
-  background-color: #212529;
-  color: #fff;
+.theme-toggle-btn:hover {
+  background-color: var(--scroll-btn-hover);
+  color: var(--contact-bg);
 }

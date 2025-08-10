@@ -1,0 +1,42 @@
+
+/* Typing cursor effect */
+.blinking-cursor {
+  animation: blink 0.8s step-start infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* Make text glow slightly */
+.typing-heading {
+  text-shadow: 0 0 10px rgba(255,255,255,0.6);
+}
+.profile-img {
+  object-fit: cover;
+  border-radius: 50%;
+  background-color: #0d1117; /* solid dark background to avoid transparency */
+  transition: transform 0.3s ease;
+  transform: scale(1);
+}
+
+.profile-img:hover {
+  transform: scale(1.02);
+}
+/* Fade-in from center */
+.fade-in-center {
+  opacity: 0;
+  transform: scale(0.95);
+  animation: fadeInCenter 2s ease forwards;
+}
+
+@keyframes fadeInCenter {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

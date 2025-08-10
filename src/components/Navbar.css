@@ -1,26 +1,31 @@
-/* Fully transparent floating navbar */
-.transparent-navbar {
-  background-color: transparent !important;
-  border-bottom: none;
+/* Themed navbar */
+.themed-navbar {
+  background-color: var(--background-color) !important;
   padding: 0.5rem;
   z-index: 100;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  align-items: center;
 }
 
 /* Spread and style links */
 .nav-links {
   display: flex;
-  justify-content: space-evenly;
-  width: 100%;
+  justify-content: flex-end; /* Move links to the right */
+  gap: 1.5rem;
   list-style: none;
   padding-left: 0;
- 
+  margin: 0;
+  
+  flex: 1; /* Push to the right side */
 }
 
 .nav-link {
-  color: rgb(26, 29, 31) !important;
-  font-weight:bolder;
+  color: var(--text-color) !important;
+  font-weight: bolder;
   position: relative;
   text-decoration: none;
+  transition: color 0.3s ease;
 
 }
 
@@ -34,6 +39,7 @@
   bottom: -4px;
   background-color: currentColor;
   transition: width 0.3s ease-in-out;
+   
 }
 
 .nav-link:hover::after {
@@ -41,33 +47,30 @@
 }
 
 .nav-link:hover {
-  color: gray !important;
+  color: rgb(2, 133, 194) !important;
+}
+
+/* Theme toggle button on right */
+.theme-toggle-btn {
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  margin-left: 1rem;
+   
   
 }
 
-/* Centered floating toggle content on small screens */
-@media (max-width: 991px) {
-  .centered-collapse {
-    position: absolute;
-    top: 70px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    background-color: rgba(212, 211, 211, 0.486);
-    border-radius: 12px;
-    padding: 1.5rem 1rem;
-    box-shadow: 0 10px 30px rgba(87, 86, 86, 0.5);
-    z-index: 999;
-    text-align: center;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .nav-link {
-    width: 100%;
-  }
+/* Light theme button */
+[data-theme='light'] .theme-toggle-btn {
+  background: #000;  /* Black button */
+  color: #fff;
 }
+
+/* Dark theme button */
+[data-theme='dark'] .theme-toggle-btn {
+  background: #fff;  /* White button */
+  color: #000;
+
+}
+
+

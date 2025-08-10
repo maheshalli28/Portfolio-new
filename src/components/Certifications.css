@@ -1,10 +1,76 @@
-#certifications .card {
-  transition: transform 0.3s ease;
+/* Fade-in animation */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
 }
 
-#certifications .card:hover {
-  transform: translateY(-5px);
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
+/* Glassmorphism Card (theme aware) */
+.glass-effect {
+  background-color: var(--glass-bg);
+  border-radius: 15px;
+  transition: all 0.4s ease;
+  padding: 15px;
+  border: 1px solid var(--glass-border);
+  color: var(--text-color);
+}
 
+/* Hover Animation */
+.cert-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 10px 25px var(--cert-glow);
+  border: 1px solid var(--cert-glow-border);
+}
 
+/* Provider Badge */
+.provider-badge {
+  display: inline-block;
+  padding: 5px 12px;
+  background: var(--badge-gradient);
+  color: var(--badge-text);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 20px;
+}
+
+/* View Button - Neon Style */
+.view-btn {
+  background:var(--glass-bg);
+  border: 2px solid var(--neon-color);
+  color: var(--neon-color);
+  font-weight: 500;
+  border-radius: 25px;
+  padding: 6px 12px;
+  transition: all 0.3s ease;
+}
+
+.view-btn:hover {
+  background: var(--neon-color);
+  color: var(--btn-hover-text);
+  box-shadow: 0 0 10px var(--neon-color), 0 0 25px var(--neon-color);
+}
+
+/* Section title effect */
+.section-title {
+  position: relative;
+  display: inline-block;
+  color: var(--text-color);
+}
+
+.section-title::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: var(--section-line-gradient);
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+}

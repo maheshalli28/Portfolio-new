@@ -1,94 +1,81 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from "react";
+import { FaBriefcase, FaUserGraduate  } from "react-icons/fa";
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { CiLocationOn } from "react-icons/ci";
+import { MdWorkOutline } from "react-icons/md";
+import { MdOutlineDateRange } from "react-icons/md";
+import { FaCode } from "react-icons/fa";
+import { LuAward } from "react-icons/lu";
 import './Experience.css';
-import { FaUserGraduate , FaBriefcase } from 'react-icons/fa';
 
 const Experience = () => {
-  const [animate, setAnimate] = useState(false);
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setAnimate(true);
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    const currentRef = sectionRef.current;
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
-
-    return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
-    };
-  }, []);
-
+  const skills = ['Python', 'Django', 'MySQL', 'REST API', ];
   return (
-    <section
-      id="experience"
-      className={`container py-5 fade-section ${animate ? 'visible' : ''}`}
-      ref={sectionRef}
-    >
-      <h1 className="text-center mb-2 fw-bold">About Me</h1>
-      <h5 className="text-center mb-4 fw-light fst-italic">My Story in Tech</h5>
-      <div className="row">
-        {/* Education Section */}
-        <div className="col-md-6 mb-4">
-          <div className="card shadow-sm h-100 border-1 rounded-4">
-            <div className="card-body fade-text">
-              <h4 className="card-title mb-3 text-center">
-                <FaBriefcase className="me-2" />
-                Work Experience
-              </h4>
-              <ul className="timeline">
-              <li className="timeline-item mb-4">
-                <div className="d-flex align-items-center gap-2 mb-2 ">
-              <h5 className="fw-bold  mb-0">Project Intern </h5>
-              <p className='ms-auto mb-0 fst-italic'>Hyderabad - Onsite</p>
-              </div>
-              <p className="mb-1 ms-1">Osmania Technology Business Incubator  (Jul 2025 - Present)</p>
-              <p className="mb-1 ms-2 fs-6 fw-light text-muted">Leading a PostGIS-based geospatial analytics project to automate Point of Interest (POI) extraction from OpenStreetMap data.
-Designed and executed advanced spatial SQL queries and Python pipelines to analyze POIs across bounding boxes and regional
-clusters.
-Automated bounding box queries and geospatial filtering via API integration, significantly improving pipeline efficiency and
-scalability</p>  
-              </li>
-            </ul>
-             
+    <section id="experience" className="container py-5">
+      <h1 className="text-center mb-2 fw-bold fade-in-center">My <span className="gradient-text"> Journey</span></h1>
+      <h5 className="text-center mb-4 fw-light fst-italic">From Learning to Professional Experience</h5>
+      <div className="row g-4">
+        
+        {/* Internship */}
+        <div className="col-lg-6">
+          <div className="card shadow-lg border-0 rounded-4 h-100 p-4 fade-in-center">
+            <div className="d-flex align-items-center mb-3 ">
+              <FaBriefcase size={20} className="me-2 text-primary" />
+              <h4 className="mb-0 fs-5 fw-bold">Internship</h4>
             </div>
+            <h5 className="fw-bold mb-2">Django Intern</h5>
+            <p className="fw-light fs-6 mb-2"><FaBriefcase className="me-1 mb-1" />Prepex <CiLocationOn className="ms-1 me-1 mb-1"/>Remote <MdOutlineDateRange className="ms-3 mb-1 me-1" />July 2025- Present </p>
+            <p>Developing and enhancing Django-based web applications within a SaaS platform. Building and optimizing backend functionalities, integrating databases, and implementing secure API.
+              Gaining hands-on experience with real-world projects, improving problem-solving and technical skills.
+            </p>
+            <div className="d-flex flex-wrap gap-3 mt-3">
+              <h6 className="fw-bold "><FaCode size={18} className="text-primary fw-light me-1"/>Technologies Used</h6>
+              <div className="d-flex flex-wrap gap-2">
+                {skills.map((skill, index) => (
+                  <span key={index} className="badge rounded-pill bg-secondary-subtle text-dark px-3 fw-light py-2">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <hr></hr>
+             <div className="d-flex align-items-center mb-3 ">
+              <FaBriefcase size={20} className="me-2 text-primary" />
+              <h4 className="mb-0 fw-bold fs-5">Self Learning</h4>
+              </div>
+              <p className="fs-6 fw-light mb-2"><MdWorkOutline className="me-1 mb-1" />Personal Projects <CiLocationOn className="ms-1 me-1 mb-1"/>Self-Learning <MdOutlineDateRange className="ms-2 mb-1 me-1" />May 2025- Present </p>
+              <p>Currently engaged in intensive self-study, focusing on full-stack technologies, and building comprehensive projects</p>
+
           </div>
         </div>
 
-        {/* Work Experience Section */}
-        <div className="col-md-6 mb-4">
-          <div className="card shadow-sm h-100 border-1 rounded-4">
-            <div className="card-body fade-text">
-              <h4 className="card-title mb-3 text-center">
-                <FaUserGraduate  className="me-2 " />
-                Education
-              </h4>
-              <ul className="timeline">
-              <li className="timeline-item mb-4">
-              <h5 className="fw-bold mb-1">Bachelor of Technology - ECE</h5>
-              <p className="mb-1 ms-1">Sri Indu College of Engineering and Technology (SICET). (2021 - 2025)</p>
-              <p className="mb-1 fs-6 ms-1 fw-light text-muted">CGPA: 8.1/10</p>
-              <p className='ms-1'>Hyderabad, Telangana - 500070</p>
-              </li>
-              <li className="timeline-item">
-              <h5 className="fw-bold mb-1">Central Board of Secondary Education Class XI & XII</h5>
-               <p className="mb-1 ms-1 ">Global Indian International School (GIIS) - (2018 - 2019)</p>
-               <p className="mb-1 ms-1 fs-6 fw-light text-muted">Percentage 94%</p>
-             <p className='ms-1'>Hyderabad, Telangana - 500070</p>
-               </li>
-            </ul>
+        {/* Education */}
+        <div className="col-lg-6">
+          <div className="card shadow-lg border-0 rounded-4 h-100 p-4 fade-in-center">
+            <div className="d-flex align-items-center mb-3">
+              <FaUserGraduate size={25} className="me-2 text-success" />
+              <h4 className="mb-0 fw-bold">Education</h4>
             </div>
+            <h5 className="fw-bold mb-1">Bachelor of Technology - ECE</h5>
+            <p className=" mb-2">Sri Indu College of Engineering and Technology </p>
+            <p className="fw-light mb-2"><CiLocationOn className=" me-1 mb-0"/>Hyderabad, Telangana <MdOutlineDateRange className="ms-2 me-1 mb-1" />2021 - 2025 </p>
+            <p>CGPA :<strong>8.3/10</strong></p> 
+            <h6><LuAward size={20} className="text-primary"/> Key Achievements</h6> 
+            <ul>
+               <li>Top performer in ECE, <strong>awarded</strong> for academic excellence.</li>
+               <li>Conducted <strong>IoT workshops</strong> to guide peers on practical applications.</li>
+               <li>Actively participated in<strong> hackathons,</strong> showcasing innovative solutions.</li>
+            </ul>
+            <hr />
+            <h5 className="fw-bold mb-1">Intermediate - MPC</h5>
+            <p className="text mb-2">Gouthami Junior College</p>
+            <p className="fw-light mb-2"><CiLocationOn className=" me-1 mb-1"/>Nalgonda, Telangana <MdOutlineDateRange className="ms-2 me-1 mb-1" />2019 - 2021 </p>
+            <p className="">Percentage: <strong>79%</strong></p>
+            
           </div>
         </div>
+
       </div>
     </section>
   );

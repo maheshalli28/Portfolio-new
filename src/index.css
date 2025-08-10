@@ -1,15 +1,28 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  
- 
+:root {
+  --bg-color: #ffffff;
+  --text-color: #151515;
+  --card-bg: #f8f9fa;
 }
 
-code {
-  font-family: 'Poppins', sans-serif;
+[data-theme="dark"] {
+  --bg-color: #505050;
+  --text-color: #ffffff;
+  --card-bg: #4b4a4a61;
+}
 
+/* Apply to body and Bootstrap overrides */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease-in-out;
+}
+
+.card {
+  background-color: var(--card-bg) !important;
+  transition: background-color 0.3s ease-in-out;
+}
+.gradient-text {
+  background: linear-gradient(90deg, #00629f,rgb(227, 0, 212)); /* Your gradient */
+  -webkit-background-clip: text;  /* Clip background to text */
+  -webkit-text-fill-color: transparent; /* Make text fill transparent so gradient shows */
 }

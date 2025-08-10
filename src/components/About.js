@@ -1,78 +1,55 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './About.css';
-import { FaGithub, FaLinkedinIn } from 'react-icons/fa6';
-import { FaCloudDownloadAlt } from "react-icons/fa";
-import profilePic from '../assets/photo.jpg'; // 📌 Add your image here
-
-const headingText = "Data Analyst".split("");
-const directions = ['up', 'down', 'left', 'right'];
+import { FaProjectDiagram, FaDatabase, FaServer, FaClock } from 'react-icons/fa'; // Icons for stats
 
 const About = () => {
+  const skills = ['Python', 'HTML', 'CSS', 'React.Js', 'Node.Js','MySQL','MongoDB'];
+
+  const stats = [
+    { value: '4+', label: 'Projects Delivered', icon: <FaProjectDiagram className="me-2" /> },
+    { value: '2+', label: 'Database Platforms', icon: <FaDatabase className="me-2" /> },
+    { value: '4+', label: 'Core Technologies ', icon: <FaServer className="me-2" /> },
+    { value: '5M+', label: 'Hands-on Experience', icon: <FaClock className="me-2" /> },
+  ];
+
   return (
-    <section id="about" className="container py-5 justify-content-space-around">
-      <div className="row align-items-center mt-5 p-4">
+    <section  id='about' className=" py-5 ">
+      <div className="container">
+        <h1 className="text-center mb-2 fw-bold fade-in-center"><span className='gradient-text'>About</span> Me</h1>
+      <h5 className="text-center mb-4 fw-light fst-italic">My Story in Tech</h5>
+       <div className="row gy-4 align-items-stretch">
+          {/* About Card */}
+          <div className="col-12 col-lg-6">
+            <div className="card shadow p-4 h-100 rounded-4 fade-in-center">
+              <h3 className="fw-bold mb-3">Full-Stack Developer </h3>
+              <p>
+              I’m a Full-Stack Developer skilled in <strong>Python, Django, React, and databases,</strong> focused on creating scalable, user focused solutions for innovative, growth-driven projects.</p>
+              <p>
+Passionate about applying strong technical skills and problem-solving abilities to deliver high-quality, impactful applications.</p>
+              <div className="d-flex flex-wrap gap-2 mt-3 ">
+                {skills.map((skill, index) => (
+                  <span key={index} className="badge rounded-pill bg-primary-subtle text-primary px-3 py-2 ">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
 
-        {/* 🔵 Profile Image */}
-        <div className="col-md-6 text-center mt-4 mb-2">
-          <img
-            src={profilePic}
-            alt="Profile"
-            className="img-fluid rounded-circle shadow"
-            style={{ width: '300px', height: '300px', objectFit: 'cover' }}
-          />
-        </div>
-
-        {/* 🔶 Info Section */}
-        <div className="col-md-6" >
-          <h4 className="fw-bold mt-3 ">Hello, I'm</h4>
-          <h1 className="fw-bolder display-2 " style={{ letterSpacing: '3px' }}>
-            SRIKAR REDDY BOMMIDI.
-          </h1>
-          <h4 className="fw-bold fst-italic animated-heading text-muted text-start">
-            {headingText.map((char, i) => {
-              const dir = directions[i % directions.length];
-              return (
-                <span
-                  key={i}
-                  className={`letter letter-${dir}`}
-                  style={{ animationDelay: `${i * 0.05}s` }}
-                >
-                  {char === " " ? "\u00A0" : char}
-                </span>
-              );
-            })}
-          </h4>
-
-          {/* 🔗 Buttons */}
-          <div className="mt-4 d-flex gap-3 flex-wrap">
-            <a
-              href="/SRIKAR_RESUME_DATA_ANALYST.pdf"
-              download
-              className="btn btn-outline-secondary border-1 rounded-5 fw-bold fs-6 d-flex align-items-center text-dark"
-            >
-              <FaCloudDownloadAlt className="me-1 text-dark" size={25} />
-              Download CV
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/srikarreddybommidi/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-outline-primary border-1 rounded-5 fw-bold fs-6 d-flex align-items-center"
-            >
-              <FaLinkedinIn className="me-1" size={23} />
-             
-            </a>
-
-            <a
-              href="https://github.com/SrikarsGit"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-outline-dark border-1 rounded-5 fw-bold fs-6 d-flex align-items-center"
-            >
-              <FaGithub className='me-1' size={25} />
-             
-            </a>
+          {/* Stats Section */}
+          <div className="col-12 col-lg-6">
+            <div className="row g-4 text-center fade-in-center">
+              {stats.map((stat, index) => (
+                <div key={index} className="col-6">
+                  <div className="card shadow p-4 rounded-4 stat-card h-100 d-flex flex-column justify-content-center align-items-center">
+                    <div className="fs-4 text-primary mb-1">{stat.icon}<br></br><strong>{stat.value}</strong></div>
+                   
+                    <div className="fw-bold">{stat.label}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

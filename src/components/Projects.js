@@ -1,107 +1,105 @@
 import React from 'react';
 import './Projects.css';
 import { FaGithub, FaLink } from 'react-icons/fa';
-import proj1 from '../assets/image.png';
-import proj2 from '../assets/image2.jpg';
-import proj3 from '../assets/image3.jpg';
-import proj4 from '../assets/image4.png';
-import proj5 from '../assets/image5.png';
-import proj6 from '../assets/image6.png';
 
-const projectData = [
+const projects = [
+ 
   {
     id: 1,
-    title: 'Apple Retail Sales Analysis',
-    description: 'Tech Stack: PostgreSQL, Excel',
-    image: proj1,
-    codeLink: 'https://github.com/SrikarsGit/Apple-Retail-Stores-Sales-Analysis-SQL.git',
-   // demoLink: 'https://github.com/SrikarsGit/Apple-Retail-Stores-Sales-Analysis-SQL.git',
+    title: "Restaurant Management System",
+    description: "Full-Stack Restaurant Management System with customer and admin interfaces, featuring real-time order management and Stripe payments.",
+    image: "/images/project1.jpg",
+    tags: ["React.js", "Bootstrap CSS", "MongoDB","Git","GitHub"],
+    type: "Personal",
+    year: "2025",
+    codeLink: 'https://github.com/maheshalli28',
+     demoLink: 'https://github.com/maheshalli28',
   },
-  
   {
     id: 2,
-    title: 'Airbnb Booking Trends Dashboard',
-    description: 'Tech Stack: Tableau, Excel',
-    image: proj3,
-   // codeLink: 'https://public.tableau.com/app/profile/srikar.reddy4509/viz/AirbnbBookingTrendsDashboard/Homepage#1',
-    demoLink: 'https://public.tableau.com/app/profile/srikar.reddy4509/viz/AirbnbBookingTrendsDashboard/Homepage#1',
+    title: "Anynomouse Thoughts Platform",
+    description: "Full-Stack real-time Thought sharing platform with CURD functionality and responsive UI.",
+    image: "/images/project2.png",
+    tags: ["React.js", "Flask", "Bootstrap CSS", "SQLite","Git","GitHub"],
+    type: "Personal",
+    year: "2025",
+    codeLink: 'https://github.com/maheshalli28/Anonymous-Message',
+     demoLink: 'https://anonymous-message-1.onrender.com/',
   },
   {
     id: 3,
-    title: ' Heart Disease Prediction',
-    description: 'Tech Stack: Python ',
-    image: proj2,
-   // codeLink: 'https://www.kaggle.com/code/srikarscode/heart-failure-prediction-eda-optimized-models',
-    demoLink: 'https://www.kaggle.com/code/srikarscode/heart-failure-prediction-eda-optimized-models',
+    title: "Personal Fitness Tracker",
+    description: "This project aims to bridge the gap between fitness tracking and actionable insights without relying on wearables, making it an affordable and accessible health-tracking solution.",
+    image: "/images/project3.png",
+    tags: ["Python", "Meachine Learning", "StreamLit","Git","GitHub"],
+    type: "Internship",
+    year: "2025",
+    codeLink: 'https://github.com/maheshalli28/Internship',
+    demoLink: 'https://fitness-tracker-2025.streamlit.app/',
   },
+  
   {
     id: 4,
-    title: ' Yelp Reviews Sentiment & Behavior Analysis',
-    description: 'Tech Stack: Snowflake, SQL, Python',
-    image: proj4,
-    codeLink: 'https://github.com/SrikarsGit/Yelp-Reviews-End-to-End-Data-Analytics-Project.git',
-   
+    title: "Heart Disease Prediction",
+    description: "Spring Boot-based food ordering platform with integrated Stripe payment system for seamless online ordering.",
+    image: "images/image2.jpg",
+    tags: ["Python", "Deep Learning", "StreamLit","Git","GitHub"],
+    type: "Major",
+    year: "2024",
+// codeLink: 'https://github.com/SrikarsGit/Uber-Trips-Data-Analysis.git',
+    demoLink: 'https://www.kaggle.com/code/srikarscode/heart-failure-prediction-eda-optimized-models',
   },
-  {
-    id: 5,
-    title: 'Uber Trip Data Analysis ',
-    description: 'Tech Stack: PostgreSQL, Python, Excel',
-    image: proj5,
-    //codeLink: 'https://github.com/SrikarsGit/Yelp-Reviews-End-to-End-Data-Analytics-Project.git',
-    codeLink: 'https://github.com/SrikarsGit/Uber-Trips-Data-Analysis.git',
-  },
-  {
-    id: 5,
-    title: 'BikeDekho ',
-    description: 'Tech Stack:Excel',
-    image: proj6,
-    //codeLink: 'https://github.com/SrikarsGit/Yelp-Reviews-End-to-End-Data-Analytics-Project.git',
-    demoLink: 'https://drive.google.com/drive/folders/1dqjW37QBtbmYKMvQRXwVJcXnta86leUw',
-  },
-
+ 
 
 ];
 
 const Projects = () => {
   return (
     <section id="projects" className="container py-5">
-      <h1 className="text-center mb-2 fw-bold ">Projects</h1>
-      <h5 className="text-center fst-italic fw-light mb-4">Explore My Recent projects</h5>
-      <div className="row">
-        {projectData.map(project => (
-          <div className="col-md-6 col-lg-4 mb-4 " key={project.id}>
-            <div className="card h-80 shadow-sm zoom-container">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="card-img-center zoom-img rounded-top "
-                style={{ height:'200px', objectFit: 'cover' }}
-              />
-              <div className="card-body d-flex flex-column">
-                <h5 className="card-title fw-bold">{project.title}</h5>
-                <p className="card-text flex-grow-1 text-secondary fst-italic">{project.description}</p>
-                <div className="d-flex justify-content-between mt-3">
-                   {project.codeLink && (
-                  <a
-                    href={project.codeLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-outline-dark btn-sm"
-                   >
-                    <FaGithub size={20} /> GitHub
-                  </a>
-                   )}
-
+      <h2 className="text-center fw-bold mb-2 gradient-text fade-in-center">Projects</h2>
+      <h5 className='text-center mb-4 fw-light fst-italic'>Browse My Feature</h5>
+      <div className="row gy-4 ">
+        {projects.map((project, index) => (
+          <div className="col-md-6 col-lg-4" key={index}>
+            <div className="card shadow project-card h-100 fade-in-center">
+              <div className="position-relative">
+                <img src={project.image} className="card-img-top" alt={project.title} />
+                <span className={`badge badge-type ${project.type === 'Personal' ? 'bg-primary' : 'bg-purple'}`}>
+                  {project.type}
+                </span>
+              </div>
+              <div className="card-body">
+                <h5 className="card-title fw-semibold">{project.title}</h5>
+                <p className="card-text small ">{project.description}</p>
+                <div className="d-flex flex-wrap gap-2 mb-2">
+                  {project.tags.map((tag, i) => (
+                    <span key={i} className="badge bg-light text-dark border">{tag}</span>
+                  ))}
+                </div>
+                <div className="d-flex justify-content-between align-items-center mt-3">
+                  <span className="text-muted small">{project.year}</span>
+                   <div className="d-flex justify-content-between mt-3">
+                  {project.codeLink && (
+                    <a
+                      href={project.codeLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn  btn-sm"
+                    >
+                      <FaGithub size={20} /> 
+                    </a>
+                  )}
                   {project.demoLink && (
                     <a
                       href={project.demoLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn btn-primary btn-sm"
+                      className="btn text-primary btn-sm"
                     >
-                      Visit<FaLink className="ms-2" />
+                      <FaLink size={18} />
                     </a>
                   )}
+                </div>
                 </div>
               </div>
             </div>
