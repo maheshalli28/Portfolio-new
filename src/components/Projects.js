@@ -31,7 +31,7 @@ const projects = [
     title: "Personal Fitness Tracker",
     description: "This project aims to bridge the gap between fitness tracking and actionable insights without relying on wearables, making it an affordable and accessible health-tracking solution.",
     image: "/images/project3.png",
-    tags: ["Python", "Meachine Learning", "StreamLit","Git","GitHub"],
+    tags: ["Python", "Meachine Learning", "StreamLite","Git","GitHub"],
     type: "Internship",
     year: "2025",
     codeLink: 'https://github.com/maheshalli28/Internship',
@@ -41,11 +41,11 @@ const projects = [
   {
     id: 4,
     title: "Heart Disease Prediction",
-    description: "Spring Boot-based food ordering platform with integrated Stripe payment system for seamless online ordering.",
+    description: "Built and optimized ML models (Logistic Regression, KNN, SVM, Decision Tree, Random Forest, XGBoost) for heart disease prediction, achieving up to 89% F1-score through EDA, feature engineering, and hyperparameter tuning.",
     image: "images/image2.jpg",
-    tags: ["Python", "Deep Learning", "StreamLit","Git","GitHub"],
-    type: "Major",
-    year: "2024",
+    tags: ["Python", "Deep Learning", "StreamLite","Git","GitHub"],
+    type: "Major Project",
+    year: "2025",
 // codeLink: 'https://github.com/SrikarsGit/Uber-Trips-Data-Analysis.git',
     demoLink: 'https://www.kaggle.com/code/srikarscode/heart-failure-prediction-eda-optimized-models',
   },
@@ -63,7 +63,12 @@ const Projects = () => {
           <div className="col-md-6 col-lg-4" key={index}>
             <div className="card shadow project-card h-100 fade-in-center">
               <div className="position-relative">
-                <img src={project.image} className="card-img-top" alt={project.title} />
+                <img
+                src={project.image}
+               className="card-img-top"
+               alt={project.title}
+               loading="lazy"
+              />
                 <span className={`badge badge-type ${project.type === 'Personal' ? 'bg-primary' : 'bg-purple'}`}>
                   {project.type}
                 </span>

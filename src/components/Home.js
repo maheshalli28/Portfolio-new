@@ -44,6 +44,7 @@ const Home = () => {
             src={profilePic} 
             alt="Profile" 
             className="profile-img"
+            loading="lazy"
             style={{ maxWidth: '280px', width: '280px', borderRadius: '50%' }}
           />
         </div>
