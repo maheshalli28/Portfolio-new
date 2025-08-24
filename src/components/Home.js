@@ -45,7 +45,7 @@ const Home = () => {
             alt="Profile" 
             className="profile-img"
             loading="lazy"
-            style={{ maxWidth: '280px', width: '280px', borderRadius: '50%' }}
+            style={{ maxWidth: '60%', width: '60%', borderRadius: '50%' }}
           />
         </div>
 
@@ -72,7 +72,7 @@ const Home = () => {
             </a>
 
             <a
-              href="https://linkdin.com/alli-mahesh"
+              href="https://www.linkedin.com/in/alli-mahesh-a275a227b/"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-outline-dark border-2 rounded-5 fw-bold fs-6 d-flex align-items-center"

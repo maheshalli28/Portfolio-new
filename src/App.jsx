@@ -9,10 +9,17 @@ import Contact from './components/Contact';
 import Experience from './components/Experience';
 import Footer from './components/Footer';
 import BackgroundLogos from './components/BackgroundLogos';
+import ReactGA from "react-ga4";
 import './App.css';
 import './index.css';
 
 function App() {
+  
+  useEffect(() => {
+    ReactGA.initialize("G-9ZTFX994W5"); // your Measurement ID
+    ReactGA.send("pageview"); // Track initial page view
+  }, []);
+
   // State for theme
   const [theme, setTheme] = useState('light');
 

@@ -12,8 +12,8 @@ const projects = [
     tags: ["React.js", "Bootstrap CSS", "MongoDB","Git","GitHub"],
     type: "Personal",
     year: "2025",
-    codeLink: 'https://github.com/maheshalli28',
-     demoLink: 'https://github.com/maheshalli28',
+    codeLink: 'https://github.com/maheshalli28/Foodies-Resturent',
+     demoLink: 'https://foodies-resturent.netlify.app/',
   },
   {
     id: 2,
